@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<title>about</title>
+<link rel="alternate" type="application/rss+xml" title="RSS" href="rss.xml" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!--<meta name="title" content="">-->
+<meta name="description" content="">
+<!--<meta name="keywords" content="">-->
+<meta name="color-scheme" content="light dark" />
+
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="-1">
+
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+<meta name="generator" content="" />
+
+<!--<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">-->
+<link rel="icon" href="logo.png?" type="image/x-icon" />
+<link rel="stylesheet" href="style.css?">
+<!--<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />-->
+
+
+
+<script>function reload() {  location.reload(true); } </script>
+
+
+
+</head>
+<body>
+
+<!-- content -->
+<div class="content">
+
+<div class="wrapper">
+<header>
+<nav>
+
+<a href="../"><img class="logo2 op" src="logo.png" alt="logo"></a>
+<a href="test.html">test</a><a href="music.html">music</a>
+<button onclick="dropdownFunction();" class="dropbtn" id="dropbtn">☰ other</button>
+
+<div id="myDropdown" class="dropdown-content shadow light1">
+<a href="tpl.html">TPL</a><a href="geany-color.html">geany-color</a><a href="firefox-theme.html">firefox-theme</a><a href="wallpaper.html">wallpaper</a><a href="search.html">search</a><a class="active" href="about.html">about</a></div>
+
+<!--<hr />-->
+ </nav>
+ </header>
+
+</div>
+
+ <noscript>
+    <style>
+.dropdown-content, .dropdown { display: block; position: relative; }
+    </style>
+</noscript>
+
+<script>
+// other click
+function dropdownFunction() {
+  var x = document.getElementById("myDropdown");
+ // alert(x.style.display);
+  if (x.style.display === "none"||x.style.display === "") {
+document.getElementById("dropbtn").innerHTML = '☶ other'; 
+x.style.display = "block";
+  } else {
+x.style.display = "none";
+document.getElementById("dropbtn").innerHTML = '☰ other'; 
+  }
+
+// out area
+var getclick = document.getElementById('dropbtn');
+document.addEventListener('click', function(event) {
+if (!getclick.contains(event.target)) {
+//alert('out');
+var x = document.getElementById("myDropdown");
+x.style.display = "none";
+document.getElementById("dropbtn").innerHTML = '☰ other'; 
+    }
+});
+
+}
+</script>
+
+
+
+
+
+<div class="center">
+<h3>about</h3>
+Sharing something and else.
+</div>
+</div>
+
+<footer>
+<div class="wrapper">
+    
+<span>hosting: <a href="https://pages.github.com/">pages.github.com</a></span>
+<span id="mail"></span>
+<span class="op" style="">2022</span>
+<script>document.getElementById("mail").innerHTML = '<span><a class="" href="mailto:wdvrx5qyp@mozmail.com">email</a></span>'; </script>
+
+</div>
+</footer>
+
+</body>
+</html>

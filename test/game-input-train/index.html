@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+<meta charset="UTF-8">
+<title>game input train</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="-1">
+
+<link rel="stylesheet" type="text/css" href="../../style.css">
+</head>
+<body>
+
+<style>
+
+
+
+.result,  textarea, .stat {
+margin: 0 auto;
+font-size: 150% !important;
+word-break: break-all;
+padding: 15px;
+}
+ .stat { font-size: 120% !important; }
+
+.height{ min-height: 38px; }
+
+.scroll {
+/*overflow-x: auto;
+overflow-y: hidden;
+white-space: nowrap;
+*/
+max-height: 120px;
+overflow-x: hidden;
+overflow-y: auto;
+}
+
+
+
+.stat {
+	text-align: right;
+	min-width: 50%;
+	
+}
+</style>
+
+<div class="content">
+<div class="center2">
+<div class="post2 light2 border2 height" style="margin: 2em auto;">
+
+
+<div id="result" class="result scroll"></div>
+
+<textarea rows="2" id="text"  name="input2" placeholder=" input"></textarea>
+<div id="stat" class="op stat" style="">stat</div>
+
+<div style="text-align: right">
+<a class="button op light border1" href="?refresh">new</a>
+</div>
+
+
+</div>
+</div>
+</div>
+
+<script>
+
+// gen task
+//var letters = "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz";
+var letters = "       abcdefghijklmnopqrstuvwxyz";
+letters = [...letters]; 
+
+// duplicate symbol in array
+b = [];
+for(var x = 0; x < 5; ++x){
+for(var i = 0; i < letters.length; ++i){
+b.push(letters[i]);
+}
+}
+letters = b;
+//console.log(letters);
+
+
+function shuffleArray(arr) {
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+//console.log(arr);
+}
+shuffleArray(letters);
+
+
+let text = '';
+letters.forEach(myFunction3);
+letters = text.replace(/\s\s+/g, ' ');
+letters = letters.trim();
+letters = [...letters]; 
+function myFunction3(item, index) {
+text += item; 
+}
+
+
+var text2 = '';
+letters.forEach(myFunction2);
+function myFunction2(item, index) {
+text2 += item; 
+}
+document.getElementById("result").innerHTML = text2;
+
+
+
+
+
+
+document.getElementsByName("input2")[0].addEventListener('input', doThing);
+
+dateArr = [];
+secArr= [];
+
+
+function doThing(e){
+
+var error = 0;
+var errorColor = '';
+var id = 'id0';
+
+//alert(e.target.value);
+// input value
+var q = e.target.value;
+
+
+//var answerArr = q.split ("");
+answerArr = [...q]; // convert input string to array for chek
+//console.log(answerArr);
+
+// chek
+var text = '';
+letters.forEach(myFunction);
+// print task 2 ant result if have input (
+document.getElementById("result").innerHTML = text;
+function myFunction(item, index) {
+
+//text += item; 
+//console.log(item);
+//console.log(answerArr[index]);
+var chek = 'no';
+if(item == answerArr[index]){
+//if(item == ' '){text += '<span class="greenbg" id="id'+index+'">'+item+'</span>';}else{}
+if(item == ' '){
+text += '<span class="green" id="id'+index+'">·</span>';
+}else{
+text += '<span class="green" id="id'+index+'">'+item+'</span>';
+}
+chek = 'yes';
+id = 'id'+index;
+}
+
+if(item != answerArr[index]&&answerArr[index] != undefined){
+if(item == ' '){
+text += '<span class="red" id="id'+index+'">·</span>';
+}else{
+text += '<span class="red" id="id'+index+'">'+item+'</span>';
+}
+chek = 'yes';
+error++;
+id = 'id'+index;
+}
+
+if(chek == 'no'){
+text += '<span class="">'+item+'</span>'; 
+}
+
+}
+
+/*document.getElementById("result").innerHTML = q;
+document.getElementById('result').scrollIntoView();*/
+
+
+
+/* stat */
+dateArr.push(Date.now());
+//console.log(dateArr);
+//dateArr.reverse();
+
+var sec = 0;
+//console.log(dateArr.length);
+//console.log(dateArr[dateArr.length-1]);
+//console.log(dateArr[dateArr.length-2]);
+if(dateArr[dateArr.length-2] != undefined){
+const millis = dateArr[dateArr.length-1]-dateArr[dateArr.length-2];
+//console.log(`seconds = ${Math.floor(millis / 1000)}`);
+sec = Math.floor(millis / 1000);
+secArr.push(sec);
+}
+
+var timeAverage = 0;
+secArr.forEach(myFunction2);
+function myFunction2(item, index) {
+timeAverage = timeAverage + item; 
+console.log(item);
+}
+
+
+//console.log(secArr.length);
+//console.log(timeAverage/secArr.length);
+timeAverage = timeAverage/secArr.length;
+
+
+abc();
+function abc(){
+if(isNaN(timeAverage)){ timeAverage = 0; }
+if(error >= 1) { errorColor = 'red'; } else { errorColor = 'green'; }
+document.getElementById("stat").innerHTML = sec+'/'+timeAverage.toFixed(2)+' sec. || '+error+' <span class="'+errorColor+'">error</span>';
+}
+
+scrollTo();
+function scrollTo(){
+document.getElementById(id).scrollIntoView(true);
+}
+
+}
+
+
+
+</script>
+
+</body>
+</html>

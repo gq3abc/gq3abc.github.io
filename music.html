@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<title>Music</title>
+<link rel="alternate" type="application/rss+xml" title="RSS" href="rss.xml" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!--<meta name="title" content="">-->
+<meta name="description" content="">
+<!--<meta name="keywords" content="">-->
+<meta name="color-scheme" content="light dark" />
+
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="-1">
+
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+<meta name="generator" content="" />
+
+<!--<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">-->
+<link rel="icon" href="logo.png?" type="image/x-icon" />
+<link rel="stylesheet" href="style.css?">
+<!--<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />-->
+
+
+
+<script>function reload() {  location.reload(true); } </script>
+
+
+
+</head>
+<body>
+
+<!-- content -->
+<div class="content">
+
+<div class="wrapper">
+<header>
+<nav>
+
+<a href="../"><img class="logo2 op" src="logo.png" alt="logo"></a>
+<a href="test.html">test</a><a class="active" href="music.html">music</a>
+<button onclick="dropdownFunction();" class="dropbtn" id="dropbtn">☰ other</button>
+
+<div id="myDropdown" class="dropdown-content shadow light1">
+<a href="tpl.html">TPL</a><a href="geany-color.html">geany-color</a><a href="firefox-theme.html">firefox-theme</a><a href="wallpaper.html">wallpaper</a><a href="search.html">search</a><a href="about.html">about</a></div>
+
+<!--<hr />-->
+ </nav>
+ </header>
+
+</div>
+
+ <noscript>
+    <style>
+.dropdown-content, .dropdown { display: block; position: relative; }
+    </style>
+</noscript>
+
+<script>
+// other click
+function dropdownFunction() {
+  var x = document.getElementById("myDropdown");
+ // alert(x.style.display);
+  if (x.style.display === "none"||x.style.display === "") {
+document.getElementById("dropbtn").innerHTML = '☶ other'; 
+x.style.display = "block";
+  } else {
+x.style.display = "none";
+document.getElementById("dropbtn").innerHTML = '☰ other'; 
+  }
+
+// out area
+var getclick = document.getElementById('dropbtn');
+document.addEventListener('click', function(event) {
+if (!getclick.contains(event.target)) {
+//alert('out');
+var x = document.getElementById("myDropdown");
+x.style.display = "none";
+document.getElementById("dropbtn").innerHTML = '☰ other'; 
+    }
+});
+
+}
+</script>
+
+
+
+
+
+<div class="center">
+
+<h3>Music</h3>
+
+<div class="post2 border2 light1">
+<div id="playerxx" class=""></div>
+<div id="playurl"></div>
+<div><a class="button light3 border2" style="text-align:center;  display:block; cursor: pointer;" onClick="window.location.reload()" title="location.reload" href="#">random</a></div>
+</div>
+
+</div>
+
+<script>
+var json = [
+    "https:\/\/www.youtube.com\/watch?v=MARsW26KXQg",
+    "https:\/\/www.youtube.com\/watch?v=A134hShx_gw",
+    "https:\/\/www.youtube.com\/watch?v=kOL7aeIDruA",
+    "https:\/\/www.youtube.com\/watch?v=oG6fayQBm9w",
+    "https:\/\/www.youtube.com\/watch?v=Cy1LdAaGASw",
+    "https:\/\/www.youtube.com\/watch?v=1zVECruSI3k",
+    "https:\/\/www.youtube.com\/watch?v=zrFI2gJSuwA"
+];
+
+function getRandomInt(max) {
+  return Math.floor(Math.random() * max);
+}
+
+
+
+
+//alert(json[getRandomInt(json.length)]);
+//alert(json.length);
+
+var id = getRandomInt(json.length);
+var random_url = json[id];
+
+var tmp        = document.createElement ('a');
+tmp.href   = random_url;
+
+
+document.getElementById("playurl").innerHTML =  '<a class="tag button light2 border2" style="text-align:center;  display:block;" target="blank" href="'+random_url+'">#'+id+' '+random_url+' ⇗</a>'; 
+ 
+var host = tmp.hostname;
+
+var w = '100%';
+var h = '275px';
+
+
+switch (host) {
+
+case "youtu.be":
+case "m.youtube.com":
+case "www.youtube.com":
+case "music.youtube.com":
+  
+//alert(random_url);
+var play = random_url.split('v=').pop();
+
+
+
+//alert(play);
+    //<!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
+     document.getElementById("playerxx").innerHTML = '<div id="player"></div>'; 
+
+      // 2. This code loads the IFrame Player API code asynchronously.
+      var tag = document.createElement('script');
+
+      tag.src = "https://www.youtube.com/iframe_api";
+      var firstScriptTag = document.getElementsByTagName('script')[0];
+      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+      // 3. This function creates an <iframe> (and YouTube player)
+      //    after the API code downloads.
+      var player;
+      function onYouTubeIframeAPIReady() {
+        player = new YT.Player('player', {
+          height: h,
+          width: w,
+          videoId: play,
+          events: {
+            'onReady': onPlayerReady,
+            'onStateChange': onPlayerStateChange
+          }
+        });
+      }
+
+      // 4. The API will call this function when the video player is ready.
+      function onPlayerReady(event) {
+        event.target.playVideo();
+//event.target.mute();
+//event.target.setVolume(100); 
+      }
+
+      // 5. The API calls this function when the player's state changes.
+      //    The function indicates that when playing a video (state=1),
+      //    the player should play for six seconds and then stop.
+      var done = false;
+      function onPlayerStateChange(event) {
+        if (event.data == YT.PlayerState.PLAYING && !done) {
+          setTimeout(stopVideo, 6000);
+          done = true;
+        }
+
+      }
+      function stopVideo() {
+        player.stopVideo();
+      }
+      
+// when video ends
+function onPlayerStateChange(event) {     
+if(event.data === 0) {            
+// Simulate an HTTP redirect:
+ location.reload(); 
+}
+}
+
+
+
+break;
+   
+
+case 'vimeo.com':
+
+function injectScript(src) {
+    return new Promise((resolve, reject) => {
+        const script = document.createElement('script');
+        script.src = src;
+        script.addEventListener('load', resolve);
+        script.addEventListener('error', e => reject(e.error));
+        document.head.appendChild(script);
+    });
+}
+
+injectScript('https://player.vimeo.com/api/player.js')
+    .then(() => {
+        console.log('Script loaded!');
+        
+        
+        
+        
+        
+        
+var play = random_url.split('/').pop();
+document.getElementById("playerxx").innerHTML = '<div id="myVideo" data-vimeo-id="'+play+'" data-vimeo-autoplay="true"></div>'; 
+
+var options = {
+    url: "https://vimeo.com/"+play,
+   // width:400
+   height:h
+  };
+
+  var videoPlayer = new Vimeo.Player('myVideo', options);
+
+videoPlayer.on('play', function() {
+    console.log('Played the video');
+  });
+  
+videoPlayer.on('ended', function(data) {
+ location.reload(); 
+});
+        
+        
+        
+        
+        
+    }).catch(error => {
+        console.error(error);
+    });
+    
+    
+    
+    
+
+
+
+    break;
+
+    
+case "soundcloud.com":
+
+function injectScript(src) {
+    return new Promise((resolve, reject) => {
+        const script = document.createElement('script');
+        script.src = src;
+        script.addEventListener('load', resolve);
+        script.addEventListener('error', e => reject(e.error));
+        document.head.appendChild(script);
+    });
+}
+
+injectScript('https://w.soundcloud.com/player/api.js')
+    .then(() => {
+        console.log('Script loaded!');
+        
+
+  document.getElementById("playerxx").innerHTML = '<iframe  id="sc-widget" width="'+w+'" height="'+h+'" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url='+random_url+'&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>'; 
+
+
+  (function(){
+    var widgetIframe = document.getElementById('sc-widget'),
+        widget       = SC.Widget(widgetIframe);
+
+    widget.bind(SC.Widget.Events.READY, function() {
+      // load new widget
+      widget.bind(SC.Widget.Events.FINISH, function() {
+// Simulate an HTTP redirect:
+
+ location.reload(); 
+      });
+    });
+
+  }());
+
+ }).catch(error => {
+ console.error(error);
+    });
+
+ break;
+    
+default:
+console.log(`default switch`);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<footer>
+<div class="wrapper">
+    
+<span>hosting: <a href="https://pages.github.com/">pages.github.com</a></span>
+<span id="mail"></span>
+<span class="op" style="">2022</span>
+<script>document.getElementById("mail").innerHTML = '<span><a class="" href="mailto:wdvrx5qyp@mozmail.com">email</a></span>'; </script>
+
+</div>
+</footer>
+
+</body>
+</html>

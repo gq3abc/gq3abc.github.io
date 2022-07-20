@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<title>Home Page</title>
+<link rel="alternate" type="application/rss+xml" title="RSS" href="rss.xml" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!--<meta name="title" content="">-->
+<meta name="description" content="sharing something and else">
+<!--<meta name="keywords" content="">-->
+<meta name="color-scheme" content="light dark" />
+
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="-1">
+
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+<meta name="generator" content="" />
+
+<!--<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">-->
+<link rel="icon" href="logo.png?" type="image/x-icon" />
+<link rel="stylesheet" href="style.css?">
+<!--<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />-->
+
+
+
+<script>function reload() {  location.reload(true); } </script>
+
+<script src="post_time.js"></script>
+<script src="search.js"></script>
+
+</head>
+<body>
+
+<!-- content -->
+<div class="content">
+
+<div class="wrapper">
+<header>
+<nav>
+
+<a href="../"><img class="logo2 op" src="logo.png" alt="logo"></a>
+<a href="test.html">test</a><a href="music.html">music</a>
+<button onclick="dropdownFunction();" class="dropbtn" id="dropbtn">☰ other</button>
+
+<div id="myDropdown" class="dropdown-content shadow light1">
+<a href="tpl.html">TPL</a><a href="geany-color.html">geany-color</a><a href="firefox-theme.html">firefox-theme</a><a href="wallpaper.html">wallpaper</a><a href="search.html">search</a><a href="about.html">about</a></div>
+
+<!--<hr />-->
+ </nav>
+ </header>
+
+</div>
+
+ <noscript>
+    <style>
+.dropdown-content, .dropdown { display: block; position: relative; }
+    </style>
+</noscript>
+
+<script>
+// other click
+function dropdownFunction() {
+  var x = document.getElementById("myDropdown");
+ // alert(x.style.display);
+  if (x.style.display === "none"||x.style.display === "") {
+document.getElementById("dropbtn").innerHTML = '☶ other'; 
+x.style.display = "block";
+  } else {
+x.style.display = "none";
+document.getElementById("dropbtn").innerHTML = '☰ other'; 
+  }
+
+// out area
+var getclick = document.getElementById('dropbtn');
+document.addEventListener('click', function(event) {
+if (!getclick.contains(event.target)) {
+//alert('out');
+var x = document.getElementById("myDropdown");
+x.style.display = "none";
+document.getElementById("dropbtn").innerHTML = '☰ other'; 
+    }
+});
+
+}
+</script>
+
+
+
+
+
+
+
+<header style="text-align: center">
+<a href="?q=drawing s"><img class="draw" src="dd.png?" alt="drawing" title="drawing"></a><br />
+<a rel="nofollow" href="?q=r"><img class="logo" src="logo.png? " alt="logo"  title="random code doc"><!-- <span style="vertical-align: middle; font-size:38px; font-weight:bold; color:#898989 "> gq3abc</span>--></a>
+</header>
+
+
+
+
+<!-- post -->
+
+<div class="post border2">
+<time datetime="2022-07-12T03:21:13+02:00"></time>
+<span class="pre">NASA Webb Telescope on Twitter: "👀 Sneak a peek at the deepest & sharpest infrared image of the early universe ever taken — all in a day’s work for the Webb telescope. (Literally, capturing it took less than a day!) This is Webb’s first image released as we begin to <a style="" rel="nofollow" class="tag light border1" target="blank" href="https://gq3abc.github.io/?q=unfoldtheuniverse%3A s">#UnfoldTheUniverse: <span class="sup">⇗</span></a> <a  target="_blank" href="https://t.co/tlougFWg8B">https://t.co/tlougFWg8B</a> <a  target="_blank" href="https://t.co/Y7ebmQwT7j"">https://t.co/Y7ebmQwT7j"</a> / Twitter <a  target="_blank" href="https://twitter.com/NASAWebb/status/1546621080298835970">https://twitter.com/NASAWebb/status/1546621080298835970</a></span>
+<div class="pf">
+<span class="taglist"><a style="" rel="nofollow" class="tag light border1" target="blank" href="https://gq3abc.github.io/?q=space s">#space <span class="sup">⇗</span></a> <a style="" rel="nofollow" class="tag light border1" target="blank" href="https://gq3abc.github.io/?q=news s">#news <span class="sup">⇗</span></a> <a style="" rel="nofollow" class="tag light border1" target="blank" href="https://gq3abc.github.io/?q=technology s">#technology <span class="sup">⇗</span></a></span>
+<span class="time"><span id="time228"></span></span>
+</div>
+</div>
+
+<script>
+document.getElementById("time228").innerHTML = '<a class="tag border1 light" href="blog.html#228">&nbsp;'+postTime(1657588873)+'&nbsp;</a>';
+
+
+</script>
+
+
+<!-- post end -->
+
+</div>
+
+
+
+
+
+
+<form method="GET" class="" style="width: var(--postw); margin-top: 70px;" action="index.html">
+
+<div  style="position: relative; height: var(--inputh);">
+<input type="text" class=""  id="clear"  style="text-align: center; position: absolute; bottom: 0;  left: 0; width: 75%; " name="q" autocomplete="off" x-webkit-speech />
+<button  type="button" class="op border1" style="position: absolute; z-index:2; bottom: 1px; left: calc(75% - 21px); width: 20px; height: 20px; cursor: pointer; text-align: center; font-size: 12px;" onclick="document.getElementById('clear').value = ''; document.getElementById('clear').focus();" title="Clear">✕</button>
+<input type="submit" value="go ⇗" style="position: absolute;  bottom: 0; right:0; width: calc(25% - 1px) !important;">
+</div>
+
+</form>
+
+
+<div>
+
+
+</div>
+
+<footer>
+<div class="wrapper">
+    
+<span>hosting: <a href="https://pages.github.com/">pages.github.com</a></span>
+<span id="mail"></span>
+<span class="op" style="">2022</span>
+<script>document.getElementById("mail").innerHTML = '<span><a class="" href="mailto:wdvrx5qyp@mozmail.com">email</a></span>'; </script>
+
+</div>
+</footer>
+
+</body>
+</html>

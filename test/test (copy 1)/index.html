@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+<meta charset="UTF-8">
+<title>Title</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="../../style.css">
+</head>
+<body>
+<div class="center2">
+    
+<style>
+
+.ani1 {
+  animation-name: ani1;
+  animation-duration: 0.3s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes ani1 {
+position:absolute;
+0% { transform: rotate(0deg);  }
+25% { transform: rotate(5deg);  }
+50% { transform: rotate(0deg);  }
+75% { transform: rotate(-5deg);  }
+100% { transform: rotate(0deg);  }
+}
+
+/*fix*/
+.post h1, .post a{ display: inline-block; }
+</style>
+
+
+
+<div class="post border2" style="height: 200px">
+<h1 class="ani1">h1</h1>
+<a href="#" class="ani1">a href</a>
+<a href="#">a href</a>
+<a href="#">a href</a>
+</div>
+
+</div>
+</body>
+</html>

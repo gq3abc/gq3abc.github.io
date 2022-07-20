@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+<meta charset="UTF-8">
+<title>Сalculator</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="../../style.css">
+<style>
+
+
+form{
+	margin:0;
+	padding:0;
+}
+
+button{
+min-width: 35px;
+min-height: 35px;
+padding: 0 10px;
+margin: 5px 1px;
+border-radius:5px;
+cursor:pointer;
+font-size: calc(var(--fontsize) + 40%);
+color: var(--c3);
+}
+
+.result {
+margin: 10px 0;
+padding: 10px;
+word-break: break-all;
+}
+
+#result1, #result2 {
+display: flex;
+align-items: center;
+justify-content: center;
+padding: 5px 0;   min-height: 80px;     font-size: calc(var(--fontsize) + 40%);
+}
+
+#result2 { justify-content: right; border-top: 1px solid var(--d1);  min-height: 60px; font-size: calc(var(--fontsize) + 70%); }
+
+/*#result1 {
+max-height: 100px;
+overflow-x: hidden;
+overflow-y: auto;
+}*/
+
+
+
+
+</style>
+</head>
+<body>
+
+<div class="content">
+<div class="center2">
+<div class="post border2" style="text-align: center">
+
+<div class="result light4 border2">
+<div id="result1"></div>
+<div id="result2"></div>
+</div>
+
+<div id="buttonlist">
+<div id="number"></div>
+<div id="option"></div>
+<div id="other"></div>
+</div>
+
+</div>
+</div>
+</div>
+
+<script>
+let number = "1234567890";
+number = [...number];
+a2 = '';
+number.forEach(function(number) {
+a2 += ' <button id="'+number+'" class="light3">'+number+'</button>';
+if(number == 5){ a2 += '<div></div>'; }
+})
+document.getElementById("number").innerHTML = a2;
+
+let option = "+-*/.()";
+option = [...option];
+a2 = '';
+option.forEach(function(option) { 
+a2 += ' <button id="'+option+'" class="light3">'+option+'</button>';
+})
+document.getElementById("option").innerHTML = a2;
+
+let other = "⌫,clear";
+other = other.split(',');
+a2 = '';
+other.forEach(function(other) { 
+a2 += ' <button id="'+other+'" class="">'+other+'</button>';
+})
+document.getElementById("other").innerHTML = a2;
+
+const button =[...number,  ...option];
+button.forEach(myFunction);
+
+let result = '';
+function myFunction(item, index) {
+ document.getElementById(item).addEventListener("click", function() {
+result = result+item;
+document.getElementById("result1").innerHTML = result;
+});
+}
+
+document.getElementById("⌫").addEventListener("click", function() {
+/*	result = result + "+";*/
+	result = result.substring(0, result.length - 1);
+	document.getElementById("result1").innerHTML = result;
+});
+
+document.getElementById("clear").addEventListener("click", function() {
+/*	result = result + "+";*/
+	result = '';
+	document.getElementById("result1").innerHTML = result;
+});
+
+
+
+
+
+function calc(str){
+str = new Function("return " + str)();
+
+if(str == undefined){ str = ''; }
+if(str != ''){ str = '= '+str; }
+return str
+}
+
+let buttonlist = document.querySelector('#buttonlist');
+buttonlist.addEventListener('click', (event) => {
+document.getElementById("result1").innerHTML = result;
+document.getElementById("result2").innerHTML = calc(result);
+});
+
+
+
+
+
+</script>
+
+
+
+</body>
+</html>

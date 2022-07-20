@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<title>blog</title>
+<link rel="alternate" type="application/rss+xml" title="RSS" href="rss.xml" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!--<meta name="title" content="">-->
+<meta name="description" content="">
+<!--<meta name="keywords" content="">-->
+<meta name="color-scheme" content="light dark" />
+
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="-1">
+
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+<meta name="generator" content="" />
+
+<!--<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">-->
+<link rel="icon" href="logo.png?" type="image/x-icon" />
+<link rel="stylesheet" href="style.css?">
+<!--<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />-->
+
+
+
+<script>function reload() {  location.reload(true); } </script>
+
+<script src="post_time.js"></script>
+
+</head>
+<body>
+
+<!-- content -->
+<div class="content">
+
+<div class="wrapper">
+<header>
+<nav>
+
+<a href="../"><img class="logo2 op" src="logo.png" alt="logo"></a>
+<a href="test.html">test</a><a href="music.html">music</a>
+<button onclick="dropdownFunction();" class="dropbtn" id="dropbtn">☰ other</button>
+
+<div id="myDropdown" class="dropdown-content shadow light1">
+<a href="tpl.html">TPL</a><a href="geany-color.html">geany-color</a><a href="firefox-theme.html">firefox-theme</a><a href="wallpaper.html">wallpaper</a><a href="search.html">search</a><a href="about.html">about</a></div>
+
+<!--<hr />-->
+ </nav>
+ </header>
+
+</div>
+
+ <noscript>
+    <style>
+.dropdown-content, .dropdown { display: block; position: relative; }
+    </style>
+</noscript>
+
+<script>
+// other click
+function dropdownFunction() {
+  var x = document.getElementById("myDropdown");
+ // alert(x.style.display);
+  if (x.style.display === "none"||x.style.display === "") {
+document.getElementById("dropbtn").innerHTML = '☶ other'; 
+x.style.display = "block";
+  } else {
+x.style.display = "none";
+document.getElementById("dropbtn").innerHTML = '☰ other'; 
+  }
+
+// out area
+var getclick = document.getElementById('dropbtn');
+document.addEventListener('click', function(event) {
+if (!getclick.contains(event.target)) {
+//alert('out');
+var x = document.getElementById("myDropdown");
+x.style.display = "none";
+document.getElementById("dropbtn").innerHTML = '☰ other'; 
+    }
+});
+
+}
+</script>
+
+
+
+
+
+
+<header>
+<h3>blog</h3>
+</header>
+
+<div class="post border2" id="228">
+<span class="pre">NASA Webb Telescope on Twitter: "👀 Sneak a peek at the deepest & sharpest infrared image of the early universe ever taken — all in a day’s work for the Webb telescope. (Literally, capturing it took less than a day!) This is Webb’s first image released as we begin to <a style="" rel="nofollow" class="tag light border1" target="blank" href="https://gq3abc.github.io/?q=unfoldtheuniverse%3A s">#UnfoldTheUniverse: <span class="sup">⇗</span></a> <a  target="_blank" href="https://t.co/tlougFWg8B"><img class="ico op" src="https://icons.duckduckgo.com/ip3/t.co.ico" width="14px" alt="ico"> https://t.co/tlougFWg8B</a> <a  target="_blank" href="https://t.co/Y7ebmQwT7j""><img class="ico op" src="https://icons.duckduckgo.com/ip3/t.co.ico" width="14px" alt="ico"> https://t.co/Y7ebmQwT7j"</a> / Twitter <a  target="_blank" href="https://twitter.com/NASAWebb/status/1546621080298835970"><img class="ico op" src="https://icons.duckduckgo.com/ip3/twitter.com.ico" width="14px" alt="ico"> https://twitter.com/NASAWebb/status/1546621080298835970</a> 
+<blockquote class="twitter-tweet" data-lang="en" data-theme="light"><a data-width="100%" href="https://twitter.com/NASAWebb/status/1546621080298835970"></a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</span>
+<div class="pf">
+<span class="taglist"><a style="" rel="nofollow" class="tag light border1" target="blank" href="https://gq3abc.github.io/?q=space s">#space <span class="sup">⇗</span></a> <a style="" rel="nofollow" class="tag light border1" target="blank" href="https://gq3abc.github.io/?q=news s">#news <span class="sup">⇗</span></a> <a style="" rel="nofollow" class="tag light border1" target="blank" href="https://gq3abc.github.io/?q=technology s">#technology <span class="sup">⇗</span></a> </span>
+<span class="time"><div id="time228" class="tag border1 light"></div>
+<script>document.getElementById("time228").innerHTML = ' <a href="#228">' +postTime(1657588873)+'</a>';</script></span>
+</div>
+</div></div>
+
+</div>
+
+<footer>
+<div class="wrapper">
+    
+<span>hosting: <a href="https://pages.github.com/">pages.github.com</a></span>
+<span id="mail"></span>
+<span class="op" style="">2022</span>
+<script>document.getElementById("mail").innerHTML = '<span><a class="" href="mailto:wdvrx5qyp@mozmail.com">email</a></span>'; </script>
+
+</div>
+</footer>
+
+</body>
+</html>
