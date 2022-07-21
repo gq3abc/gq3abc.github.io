@@ -57,7 +57,11 @@ overflow-y: auto;
 <div id="stat" class="op stat" style="">stat</div>
 
 <div style="text-align: right">
-<a class="button op light border1" href="?refresh">new</a>
+
+
+<a class="button op light border1" href="?mode=other">abc</a>
+<a class="button op light border1" href="?mode=quote">quote</a>
+<div id="refresh" class="button op light border1"></div>
 </div>
 
 
@@ -65,13 +69,70 @@ overflow-y: auto;
 </div>
 </div>
 
+<div id="outfvar"></div>
 <script>
+
+var  geturl = window.location;
+var url = new URL(geturl);
+var mode = url.searchParams.get("mode");
+console.log(mode);
+if(mode != null){ localStorage.setItem("mode", mode); }else{
+if(localStorage.getItem("mode")){ mode = localStorage.getItem("mode"); }
+}
+console.log(mode);
+
+document.getElementById("refresh").innerHTML = '<a href="?mode='+mode+'">new</a>';
+
+window.onload = function() {
+    if(!window.location.hash) {
+        window.location = window.location + '#loaded';
+        window.location.reload();
+    }
+}
+
+var url = "../../data/quote.json";
+
+function test(url){
+var http = new XMLHttpRequest();
+//xhttp.overrideMimeType("text/plain");
+http.overrideMimeType("application/json");
+ http.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+       // Typical action to be performed when the document is ready:
+localStorage.setItem("quote", http.responseText);
+}
+}
+http.open("GET", url, true);
+http.send();
+}
+
+test(url);
+
+quote = JSON.parse(localStorage.getItem("quote"));
+
+if(quote != null){
+const random = Math.floor(Math.random() * quote.length);
+quote = quote[random];
+}
+console.log(quote);
+
+
+
+
+
+
+let abc = "       abcdefghijklmnopqrstuvwxyz";
+
+if(mode == 'quote'){ task = quote; }else{ task = abc; }
+
 
 // gen task
 //var letters = "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz";
-var letters = "       abcdefghijklmnopqrstuvwxyz";
+var letters = task;
 letters = [...letters]; 
 
+
+if(mode != 'quote'){ 
 // duplicate symbol in array
 b = [];
 for(var x = 0; x < 5; ++x){
@@ -90,7 +151,7 @@ function shuffleArray(arr) {
   }
 //console.log(arr);
 }
-shuffleArray(letters);
+}
 
 
 let text = '';
@@ -200,7 +261,7 @@ var timeAverage = 0;
 secArr.forEach(myFunction2);
 function myFunction2(item, index) {
 timeAverage = timeAverage + item; 
-console.log(item);
+//console.log(item);
 }
 
 
