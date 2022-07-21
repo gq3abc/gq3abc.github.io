@@ -50,11 +50,13 @@ overflow-y: auto;
 <div class="center2">
 <div class="post2 light2 border2 height" style="margin: 2em auto;">
 
-
+<span class="win" style="text-align: center;"></span>
 <div id="result" class="result scroll pre"></div>
 
 <textarea rows="2" id="text"  name="input2" placeholder=" input"></textarea>
-<div id="stat" class="op stat" style="">stat</div>
+
+<div class="win" style="text-align: center;"></div>
+<div id="stat" class="op stat">stat</div>
 
 <div style="text-align: right">
 
@@ -272,6 +274,7 @@ timeAverage = timeAverage + item;
 timeAverage = timeAverage/secArr.length;
 
 
+
 abc();
 function abc(){
 if(isNaN(timeAverage)){ timeAverage = 0; }
@@ -282,6 +285,15 @@ document.getElementById("stat").innerHTML = sec+'/'+timeAverage.toFixed(2)+' sec
 scrollTo();
 function scrollTo(){
 document.getElementById(id).scrollIntoView(true);
+}
+
+
+if(letters.length <= answerArr.length && error <= 0){
+document.getElementsByClassName("win")[0].innerHTML = '<h1 class="green">You Win! !!!</h1>';
+document.getElementsByClassName("win")[1].innerHTML = '<h1 class="green" style="display: inline-block;">You Win! !!!</h1>';
+}else {
+document.getElementsByClassName("win")[0].innerHTML = '';
+document.getElementsByClassName("win")[1].innerHTML = '';
 }
 
 }
