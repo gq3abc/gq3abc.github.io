@@ -74,6 +74,8 @@ textarea { outline-color:transparent; outline-style:none; }
 input[type=submit] { cursor:pointer;  }
 input:focus{ outline: none }
 
+input[type="color"]{ min-width: var(--inputh); }
+
 nav { text-align: center;  margin: 7px 0; margin-bottom: 10px; max-width: 100%; }
 nav a, nav button { display: inline-block;  padding: 7px; text-transform: capitalize;  }
 nav button:hover { background: none;  }

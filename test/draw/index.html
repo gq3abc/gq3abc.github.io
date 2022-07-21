@@ -18,15 +18,27 @@ overflow-y: hidden; overflow: hidden;
 }
 
 
+
 body, canvas { position: relative;  }
-#img { display: block; position: absolute; top: 0; right: 0; max-width: 65px; }
-/*canvas, #img { border: 1px solid red; }*/
+#btn { position: absolute; top: 0; right: 0;  }
+#btn span,  input[type="color"], .button{ cursor: pointer; display: inline-block; margin: 0;  }
+
 </style>
 
 
 <canvas id="myPics"></canvas>
 
+<div  id="btn" class="">
+
+<span><input id="color" class="light border2" style="display: inline-block;" type="color"></span>
+<!--<span><input id="color2" class=" button  light border2" style="display: inline-block;" type="color"></span>-->
+<br /><span id="img"></span>
+</div>
+
 <script>
+var xxx = document.getElementById("btn");
+
+
 	// https://developer.mozilla.org/en-US/docs/Web/API/Element/mousemove_event
 const myPics = document.getElementById('myPics');
 const context = myPics.getContext('2d');
@@ -44,10 +56,25 @@ var color = '#141414';
 var a1 = 'notdraw';
 var a2 = 'notdraw';
 
+
+
+
+
 if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
 bg = '#141414';
 color = '#EFEFEF';
 }
+
+
+
+
+
+var txt = document.getElementById('color');
+txt.value = color;
+
+
+
+
 
 
 
@@ -70,11 +97,12 @@ isDrawing = true;
 
 
 myPics.addEventListener('mousemove', e => {
-  if (isDrawing === true) {
+if (isDrawing === true) {
 drawLine(context, x, y, e.offsetX, e.offsetY);
     x = e.offsetX;
     y = e.offsetY;
- document.getElementById("img").innerHTML = ''; 
+//document.getElementById("btn").innerHTML = ''; 
+  xxx.style.display = "none";
   }
 });
 
@@ -89,7 +117,8 @@ drawLine(context, x, y, x3, y3);
 x = e.targetTouches[0].pageX - rect.left;
 y = e.targetTouches[0].pageY - rect.top;
 
- document.getElementById("img").innerHTML = ''; 
+//document.getElementById("btn").innerHTML = ''; 
+xxx.style.display = "none";
 }
 
 });
@@ -104,6 +133,8 @@ drawLine(context, x, y, e.offsetX, e.offsetY);
 isDrawing = false;
 img();
 }
+
+ 
 });
 
 
@@ -118,6 +149,7 @@ drawLine(context, x, y, x3, y3);
     isDrawing = false;
           img();
   }
+
 });
 
 
@@ -153,6 +185,16 @@ y = 0;
 
 
 function drawLine(context, x1, y1, x2, y2) {
+
+
+        // Selecting the input element and get its value 
+        let inputVal = document.getElementById("color").value;
+        // Displaying the value
+        color = inputVal;
+
+var txt = document.getElementById('color');
+txt.value = color;
+
 context.beginPath();
 context.strokeStyle = color;
 context.lineWidth = 3;
@@ -196,12 +238,20 @@ const canvas = document.getElementById('myPics');
 const dataURL = canvas.toDataURL();
 //console.log(dataURL);
 time = Math.floor(new Date().getTime() / 1000);
- document.getElementById("img").innerHTML = '<a class="op button light border2" style="text-align: center;" href="'+dataURL+'" download="'+time+'">Save</a>'; 
+ document.getElementById("img").innerHTML = '<a class="button op light border2" href="'+dataURL+'" download="'+time+'">Save</a>'; 
  //<img src="'+dataURL+'" name="Flamingo" />
+
+
+  if (xxx.style.display === "none"||xxx.style.display === "") {
+xxx.style.display = "block";
+  } else {
+xxx.style.display = "none";
+  }
+
+
 }
 </script>
 
-<div id="img"></div>
 
 
 </body>
