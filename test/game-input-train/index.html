@@ -256,7 +256,6 @@ var sec = 0;
 //console.log(dateArr[dateArr.length-2]);
 if(dateArr[dateArr.length-2] != undefined){
 const millis = dateArr[dateArr.length-1]-dateArr[dateArr.length-2];
-//console.log(`seconds = ${Math.floor(millis / 1000)}`);
 sec = Math.floor(millis / 1000);
 secArr.push(sec);
 }
@@ -279,7 +278,7 @@ abc();
 function abc(){
 if(isNaN(timeAverage)){ timeAverage = 0; }
 if(error >= 1) { errorColor = 'red'; } else { errorColor = 'green'; }
-document.getElementById("stat").innerHTML = sec+'/'+timeAverage.toFixed(2)+' sec. || '+error+' <span class="'+errorColor+'">error</span>';
+document.getElementById("stat").innerHTML = sec+' | '+timeAverage.toFixed(2)+' sec. || '+error+' <span class="'+errorColor+'">error</span>';
 }
 
 scrollTo();
