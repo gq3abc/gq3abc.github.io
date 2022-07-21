@@ -19,10 +19,12 @@ overflow-y: hidden; overflow: hidden;
 
 
 
-body, canvas { position: relative;  }
-#btn { position: absolute; top: 0; right: 0;  }
-#btn span,  input[type="color"], .button{ cursor: pointer; display: inline-block; margin: 0;  }
 
+#btn { position: absolute; top: 0; right: 0; }
+
+ .button{ width: 50px; max-width: 100%; padding: 5px;  }
+input[type="color"]{  cursor: pointer; height: 19px; min-height: 19px; margin: 0; }
+/*#btn * { border: 1px solid red; }*/
 </style>
 
 
@@ -30,9 +32,8 @@ body, canvas { position: relative;  }
 
 <div  id="btn" class="">
 
-<span><input id="color" class="light border2" style="display: inline-block;" type="color"></span>
-<!--<span><input id="color2" class=" button  light border2" style="display: inline-block;" type="color"></span>-->
-<br /><span id="img"></span>
+<span class=" light3 button"><input id="color"  type="color"></span><br />
+<span id="img"></span>
 </div>
 
 <script>
@@ -238,7 +239,7 @@ const canvas = document.getElementById('myPics');
 const dataURL = canvas.toDataURL();
 //console.log(dataURL);
 time = Math.floor(new Date().getTime() / 1000);
- document.getElementById("img").innerHTML = '<a class="button op light border2" href="'+dataURL+'" download="'+time+'">Save</a>'; 
+ document.getElementById("img").innerHTML = '<span><a class="button op light3 " href="'+dataURL+'" download="'+time+'">Save</a></span>'; 
  //<img src="'+dataURL+'" name="Flamingo" />
 
 

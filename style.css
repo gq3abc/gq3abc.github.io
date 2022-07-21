@@ -70,6 +70,7 @@ margin: 0px;
 margin-top: 2px;
 /*box-shadow: 4px 4px var(--d2);*/
 }
+
 textarea { outline-color:transparent; outline-style:none; }
 input[type=submit] { cursor:pointer;  }
 input:focus{ outline: none }
@@ -178,29 +179,18 @@ filter:grayscale(56%);
 
 .draw { margin: 3px 0; margin-bottom:  -26px;  max-height: 100px; border-radius: 9px; }
 
-.tag {
-font-size: calc(var(--fontsize) - 15%);
-/*cursor: pointer;*/
-padding: 3px 4px;
-min-width: 20px;
-word-break: break-all;
+.tag, .button {
 margin: 1px;
 border-radius: 5px;
-display: inline-flex;
-align-items: center;
-justify-content: center;
-text-align: center;
-}
-
-.button {
-padding: 15px 9px;
 margin: 1px;
-display: inline-block;
+display: inline-flex;
 word-break: break-all;
-justify-content: center;
 align-items: center;
+justify-content: center;
 text-align: center;
 }
+.tag { font-size: calc(var(--fontsize) - 15%); padding: 3px 4px; min-width: 20px; }
+.button { padding: 15px 9px; }
 
 .menu {
 display: grid;
