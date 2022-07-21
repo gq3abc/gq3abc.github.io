@@ -85,8 +85,10 @@ document.getElementById("refresh").innerHTML = '<a href="?mode='+mode+'">new</a>
 
 window.onload = function() {
     if(!window.location.hash) {
+		if(mode == null){
         window.location = window.location + '#loaded';
         window.location.reload();
+	}
     }
 }
 
