@@ -71,17 +71,17 @@ overflow-y: auto;
 </div>
 </div>
 
-<div id="outfvar"></div>
+
 <script>
 
 var  geturl = window.location;
 var url = new URL(geturl);
 var mode = url.searchParams.get("mode");
-console.log(mode);
+
 if(mode != null){ localStorage.setItem("mode", mode); }else{
 if(localStorage.getItem("mode")){ mode = localStorage.getItem("mode"); }
 }
-console.log(mode);
+
 
 document.getElementById("refresh").innerHTML = '<a href="?mode='+mode+'">new</a>';
 
@@ -90,13 +90,14 @@ window.onload = function() {
 		if(mode == null){
         window.location = window.location + '#loaded';
         window.location.reload();
+
 	}
     }
 }
 
 var url = "../../data/quote.json";
 
-function test(url){
+function getFile(url){
 var http = new XMLHttpRequest();
 //xhttp.overrideMimeType("text/plain");
 http.overrideMimeType("application/json");
@@ -104,21 +105,19 @@ http.overrideMimeType("application/json");
     if (this.readyState == 4 && this.status == 200) {
        // Typical action to be performed when the document is ready:
 localStorage.setItem("quote", http.responseText);
+
 }
 }
 http.open("GET", url, true);
 http.send();
 }
-
-test(url);
-
+getFile(url);
 quote = JSON.parse(localStorage.getItem("quote"));
-
 if(quote != null){
 const random = Math.floor(Math.random() * quote.length);
 quote = quote[random];
 }
-console.log(quote);
+
 
 
 
