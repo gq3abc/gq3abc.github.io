@@ -202,7 +202,8 @@ var play = random_url.split('v=').pop();
 function onPlayerStateChange(event) {     
 if(event.data === 0) {            
 // Simulate an HTTP redirect:
- location.reload(); 
+location.reload(); 
+location.reload(); 
 }
 }
 
@@ -248,7 +249,8 @@ videoPlayer.on('play', function() {
   });
   
 videoPlayer.on('ended', function(data) {
- location.reload(); 
+location.reload(); 
+location.reload(); 
 });
         
         
@@ -297,7 +299,8 @@ injectScript('https://w.soundcloud.com/player/api.js')
       widget.bind(SC.Widget.Events.FINISH, function() {
 // Simulate an HTTP redirect:
 
- location.reload(); 
+location.reload(); 
+location.reload(); 
       });
     });
 

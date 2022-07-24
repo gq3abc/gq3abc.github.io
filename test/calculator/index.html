@@ -89,7 +89,7 @@ a2 += ' <button id="'+option+'" class="light3">'+option+'</button>';
 })
 document.getElementById("option").innerHTML = a2;
 
-let other = "⌫,clear";
+let other = "⌫,clear,=";
 other = other.split(',');
 a2 = '';
 other.forEach(function(other) { 
@@ -121,23 +121,27 @@ document.getElementById("clear").addEventListener("click", function() {
 });
 
 
-
-
-
 function calc(str){
 str = new Function("return " + str)();
 
 if(str == undefined){ str = ''; }
-if(str != ''){ str = '= '+str; }
+if(str != ''){ str = ''+str; }
 return str
 }
+
+
 
 let buttonlist = document.querySelector('#buttonlist');
 buttonlist.addEventListener('click', (event) => {
 document.getElementById("result1").innerHTML = result;
-document.getElementById("result2").innerHTML = calc(result);
+document.getElementById("result2").innerHTML = '='+calc(result);
 });
 
+document.getElementById("=").addEventListener("click", function() {
+document.getElementById("result1").innerHTML = calc(result);
+document.getElementById("result2").innerHTML = '='+calc(result);
+result = calc(result)
+});
 
 
 
