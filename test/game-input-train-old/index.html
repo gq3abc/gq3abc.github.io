@@ -48,7 +48,7 @@ overflow-y: auto;
 
 <div class="content">
 <div class="center2">
-<div  id="all" class="post2 light2 border2 height" style="margin: 2em auto;">
+<div class="post2 light2 border2 height" style="margin: 2em auto;">
 
 <span class="win" style="text-align: center;"></span>
 <div id="result" class="result scroll pre"></div>
@@ -85,7 +85,7 @@ if(localStorage.getItem("mode")){ mode = localStorage.getItem("mode"); }
 
 document.getElementById("refresh").innerHTML = '<a href="?mode='+mode+'">new</a>';
 
-/*window.onload = function() {
+window.onload = function() {
     if(!window.location.hash) {
 		if(mode == null){
         window.location = window.location + '#loaded';
@@ -93,60 +93,32 @@ document.getElementById("refresh").innerHTML = '<a href="?mode='+mode+'">new</a>
 
 	}
     }
-}*/
-
-
-
-
+}
 
 var url = "../../data/quote.json";
-var quote;
 
 function getFile(url){
 var http = new XMLHttpRequest();
-http.overrideMimeType("text/plain");
-//http.overrideMimeType("application/json");
-
+//xhttp.overrideMimeType("text/plain");
+http.overrideMimeType("application/json");
  http.onreadystatechange = function() {
-	 console.log( this.status);
     if (this.readyState == 4 && this.status == 200) {
        // Typical action to be performed when the document is ready:
-//localStorage.setItem("quote", http.responseText);
-quote = http.responseText;
-main();
-}
-if(this.status == 404){
-document.getElementById("result").innerHTML = '<h3 class="red" style="text-align: center">error load json</h3>';
-}
+localStorage.setItem("quote", http.responseText);
 
-
+}
 }
 http.open("GET", url, true);
 http.send();
 }
-
-
 getFile(url);
-
-
-
-
-//setTimeout(function () {
-
-
-function main(){
-console.log(quote);
-if(quote = '') {  }
-
 quote = JSON.parse(localStorage.getItem("quote"));
-
-
 if(quote != null){
 const random = Math.floor(Math.random() * quote.length);
-console.log(quote[random]);
-quote = quote[random][0];
-
+quote = quote[random];
 }
+
+
 
 
 
@@ -163,7 +135,7 @@ var letters = task;
 letters = [...letters]; 
 
 
-if(mode == 'other'){
+if(mode != 'quote'){ 
 // duplicate symbol in array
 b = [];
 for(var x = 0; x < 5; ++x){
@@ -182,9 +154,6 @@ function shuffleArray(arr) {
   }
 //console.log(arr);
 }
-
-shuffleArray(letters);
-
 }
 
 
@@ -327,8 +296,7 @@ document.getElementsByClassName("win")[1].innerHTML = '';
 
 }
 
-}
-//}, 1000)
+
 
 </script>
 
