@@ -104,8 +104,8 @@ var quote;
 
 
 var http = new XMLHttpRequest();
-http.overrideMimeType("text/plain");
-//http.overrideMimeType("application/json");
+//http.overrideMimeType("text/plain");
+http.overrideMimeType("application/json");
 
  http.onreadystatechange = function() {
 	 console.log( this.status);
