@@ -102,7 +102,7 @@ document.getElementById("refresh").innerHTML = '<a href="?mode='+mode+'">new</a>
 var url = "../../data/quote.json";
 var quote;
 
-function getFile(url){
+
 var http = new XMLHttpRequest();
 http.overrideMimeType("text/plain");
 //http.overrideMimeType("application/json");
@@ -123,10 +123,10 @@ document.getElementById("result").innerHTML = '<h3 class="red" style="text-align
 }
 http.open("GET", url, true);
 http.send();
-}
 
 
-getFile(url);
+
+
 
 
 
@@ -135,16 +135,15 @@ getFile(url);
 
 
 function main(){
-console.log(quote);
-if(quote = '') {  }
 
-quote = JSON.parse(localStorage.getItem("quote"));
+
+quote = JSON.parse(quote);
 
 
 if(quote != null){
 const random = Math.floor(Math.random() * quote.length);
-console.log(quote[random]);
-quote = quote[random][0];
+console.log(quote[random]['text']);
+quote = quote[random]['text'];
 
 }
 
