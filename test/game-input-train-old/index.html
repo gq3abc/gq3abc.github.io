@@ -97,26 +97,28 @@ window.onload = function() {
 
 var url = "../../data/quote.json";
 
-function getFile(url){
+
 var http = new XMLHttpRequest();
 //xhttp.overrideMimeType("text/plain");
 http.overrideMimeType("application/json");
  http.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
        // Typical action to be performed when the document is ready:
+
 localStorage.setItem("quote", http.responseText);
+
 
 }
 }
 http.open("GET", url, true);
 http.send();
-}
-getFile(url);
+
+
+
 quote = JSON.parse(localStorage.getItem("quote"));
-if(quote != null){
 const random = Math.floor(Math.random() * quote.length);
-quote = quote[random];
-}
+quote = quote[random]['text'];
+
 
 
 
