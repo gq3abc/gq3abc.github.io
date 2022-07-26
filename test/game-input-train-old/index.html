@@ -85,15 +85,9 @@ if(localStorage.getItem("mode")){ mode = localStorage.getItem("mode"); }
 
 document.getElementById("refresh").innerHTML = '<a href="?mode='+mode+'">new</a>';
 
-window.onload = function() {
-    if(!window.location.hash) {
-		if(mode == null){
-        window.location = window.location + '#loaded';
-        window.location.reload();
 
-	}
-    }
-}
+
+
 
 var url = "../../data/quote.json";
 
@@ -104,16 +98,22 @@ http.overrideMimeType("application/json");
  http.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
        // Typical action to be performed when the document is ready:
-
 localStorage.setItem("quote", http.responseText);
-
-
 }
 }
 http.open("GET", url, true);
 http.send();
 
+window.onload = function() {
+    if(!window.location.hash) {
+		if(localStorage.getItem("quote") == null){
+        window.location = window.location + '#loaded';
+        window.location.reload();
+}
+}
+}
 
+//alert(localStorage.getItem("quote"));
 
 quote = JSON.parse(localStorage.getItem("quote"));
 const random = Math.floor(Math.random() * quote.length);
@@ -137,7 +137,7 @@ var letters = task;
 letters = [...letters]; 
 
 
-if(mode != 'quote'){ 
+if(mode != 'quote'){
 // duplicate symbol in array
 b = [];
 for(var x = 0; x < 5; ++x){
@@ -156,6 +156,7 @@ function shuffleArray(arr) {
   }
 //console.log(arr);
 }
+shuffleArray(letters);
 }
 
 

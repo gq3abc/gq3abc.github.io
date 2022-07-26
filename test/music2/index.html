@@ -71,6 +71,16 @@ http.send();
 
 
 
+window.onload = function() {
+    if(!window.location.hash) {
+		if(localStorage.getItem("music") == null){
+        window.location = window.location + '#loaded';
+        window.location.reload();
+
+	}
+    }
+}
+
 json = JSON.parse(localStorage.getItem("music"));
 const random = Math.floor(Math.random() * json.length);
 var random_url = json[random]['url'];
