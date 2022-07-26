@@ -205,12 +205,12 @@ var random = Math.floor(Math.random() * url_list.length);
 var url = url_list[random];
 if(q == ''){
 var url_list = [
-"https://flipboard.com/",
-"https://news.google.com/",
-"https://www.msn.com/news",
-"https://www.mojeek.com/news",
-"https://getpocket.com/explore",
-"https://www.reddit.com/r/news/",
+"https://flipboard.com/topic/technology",
+"https://news.google.com/topics/CAAqJggKIiBDQkFTRWdvSUwyMHZNRGRqTVhZU0FtVnVHZ0pWVXlnQVAB",
+"https://www.bing.com/news/search?q=Technology",
+"https://www.mojeek.com/news?top=technology",
+"https://getpocket.com/explore/technology",
+"https://www.reddit.com/r/technology/",
 "https://twitter.com/explore/tabs/news"
 ];
 var random = Math.floor(Math.random() * url_list.length);
