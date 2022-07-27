@@ -34,8 +34,17 @@
 <div id="demo"></div>
 
 <script>
-
-
+//alert(window.location.hash);
+setTimeout(() => {
+//console.log("Delayed for 1 second.");
+if(!window.location.hash) {
+if(localStorage.getItem("music2reload") != "done"){
+window.location = window.location + '#loaded';
+window.location.reload();
+}
+}
+localStorage.setItem("music2reload", "done");
+}, "1000")
 
 var url = "../../data/musicfav.json";
 var json;
@@ -61,15 +70,10 @@ http.send();
 
 
 
-window.onload = function() {
-    if(!window.location.hash) {
-		if(localStorage.getItem("music") == null){
-        window.location = window.location + '#loaded';
-        window.location.reload();
 
-	}
-    }
-}
+
+
+//alert(json);
 
 json = JSON.parse(localStorage.getItem("music"));
 const random = Math.floor(Math.random() * json.length);
