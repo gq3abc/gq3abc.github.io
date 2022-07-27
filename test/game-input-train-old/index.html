@@ -74,6 +74,17 @@ overflow-y: auto;
 
 <script>
 
+setTimeout(() => {
+if(!window.location.hash) {
+if(localStorage.getItem("game-input-train-old") != "done"){
+window.location = window.location + '#loaded';
+window.location.reload();
+}
+}
+localStorage.setItem("game-input-train-old", "done");
+}, "1000")
+
+
 var  geturl = window.location;
 var url = new URL(geturl);
 var mode = url.searchParams.get("mode");
@@ -104,14 +115,7 @@ localStorage.setItem("quote", http.responseText);
 http.open("GET", url, true);
 http.send();
 
-window.onload = function() {
-    if(!window.location.hash) {
-		if(localStorage.getItem("quote") == null){
-        window.location = window.location + '#loaded';
-        window.location.reload();
-}
-}
-}
+
 
 //alert(localStorage.getItem("quote"));
 
