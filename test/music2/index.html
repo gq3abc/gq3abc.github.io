@@ -34,17 +34,7 @@
 <div id="demo"></div>
 
 <script>
-var music = localStorage.getItem("music");
 
-window.onload = function() {
-    if(!window.location.hash) {
-		if(music == null){
-        window.location = window.location + '#loaded';
-        window.location.reload();
-
-	}
-    }
-}
 
 
 var url = "../../data/musicfav.json";
