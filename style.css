@@ -306,8 +306,8 @@ footer a { color: var(--c1);  }
 
 input, textarea, input:focus, select, button {  border: 1px solid var(--d3); background: var(--l2); color: var(--c3); border-radius: 3px; }
 input:hover, textarea:hover, select:hover, button:hover {  background: var(--l3); }
-input[type="submit"] { background: var(--d1); color: var(--c2); }
-input[type="submit"]:hover { background: var(--d2); color: var(--c3); }
+input[type="submit"] { background: var(--l1); color: var(--c2); }
+input[type="submit"]:hover { background: var(--d1); color: var(--c3); }
 
 input[type="file"] { background: var(--d1); color: var(--c1); }
 input[type="range"] { min-width: 100%; margin: 0; padding: 0 !important; min-height: 10px !important;  margin-bottom: 15px; }
