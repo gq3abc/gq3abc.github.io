@@ -69,6 +69,7 @@ resize: vertical;
 margin: 0px;
 margin-top: 2px;
 /*box-shadow: 4px 4px var(--d2);*/
+margin-bottom: 0;
 }
 
 textarea { outline-color:transparent; outline-style:none; }
