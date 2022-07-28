@@ -34,8 +34,16 @@
 <div id="demo"></div>
 
 <script>
+setTimeout(() => {
+if(!window.location.hash) {
+if(localStorage.getItem("music2reload") != "done"){
+window.location = window.location + '#loaded';
+window.location.reload();
+}
+}
+localStorage.setItem("music2reload", "done");
+}, "1000")
 
-    
 var url = "../../data/musicfav.json";
 var json;
 
@@ -47,6 +55,7 @@ console.log( this.status);
 if (this.readyState == 4 && this.status == 200) {
 // Typical action to be performed when the document is ready:
 json = http.responseText;
+localStorage.setItem("music", http.responseText);
 }
 if(this.status == 404){
 console.log("json 404");
@@ -54,7 +63,7 @@ console.log("json 404");
 
 
 }
-http.open("GET", url, false);
+http.open("GET", url, true);
 http.send();
 
 
@@ -62,18 +71,13 @@ http.send();
 
 
 
+//alert(json);
 
-
-
-
-
-
-
-
-json = JSON.parse(json);
-
+json = JSON.parse(localStorage.getItem("music"));
 const random = Math.floor(Math.random() * json.length);
-var random_url= json[random]['url'];
+var random_url = json[random]['url'];
+
+
 //console.log(random_url);
 
 document.getElementById("playurl").innerHTML =  '<a class="tag button light2 border2" style="text-align:center;  display:block;" target="blank" href="'+random_url+'">'+random_url+' ⇗</a>'; 
