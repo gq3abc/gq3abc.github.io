@@ -89,9 +89,9 @@ var nav = "5,6,7,8,9,10,50,100,300,500,1000";
 nav = nav.split(",");
 for(let i = 0; i < nav.length; i++){
 if(q == nav[i]){
-result += nav[i]+' ';
+result += '<span class="button">'+nav[i]+'</span>';
 }else{
-result += '<a href="?q='+nav[i]+'">'+nav[i]+'</a> ';
+result += '<a class="button" href="?q='+nav[i]+'">'+nav[i]+'</a>';
 }
 }
 
