@@ -2,7 +2,7 @@
 font-family: 'Roboto';
 font-style: normal;
 font-weight: 400;
-src: local(''), url('../Roboto-Regular.ttf') format('truetype');
+src: local(''), url('/font/Roboto-Regular.ttf') format('truetype');
 }
 
 :root{
