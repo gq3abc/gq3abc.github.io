@@ -96,7 +96,42 @@ document.getElementById("dropbtn").innerHTML = '☰ other';
 
 
 
+
+
+<div style="text-align:center;" class="center">
+<h1 id="themeselect"></h1>
+<div id="themeOption"></div>
 </div>
+
+
+<script>
+let themeOption = ["auto","light","dark","random"];
+
+var result = '';
+themeOption.forEach((element) => {
+if(theme == element){
+result += ' <button id="'+element+'" class="button op">'+element+'</button>';
+}else{
+result += ' <button id="'+element+'" class="button light3">'+element+'</button>';
+}
+})
+document.getElementById("themeOption").innerHTML = result;
+
+document.getElementById("themeselect").innerHTML = theme;
+themeOption.forEach(myFunction);
+
+function myFunction(item, index) {
+document.getElementById(item).addEventListener("click", function() {
+document.getElementById("themeselect").innerHTML = item;
+localStorage.setItem('theme', item);
+setTheme(item);
+theme = item;
+});
+}
+
+
+
+</script></div>
 
 <footer>
 <div class="wrapper">
@@ -107,7 +142,7 @@ document.getElementById("dropbtn").innerHTML = '☰ other';
 <script>document.getElementById("mail").innerHTML = '<span><a class="" href="mailto:wdvrx5qyp@mozmail.com">email</a></span>'; </script>
 
 <span id="theme"></span>
-<script>document.getElementById("mail").innerHTML = '<span><a class="" href="/theme.html">theme ' +theme+'</a></span>'; </script>
+<script>document.getElementById("mail").innerHTML = '<span><a class="" href="/theme.html">theme: ' +theme+'</a></span>'; </script>
 
 <span class="op" style="">2022</span>
 
