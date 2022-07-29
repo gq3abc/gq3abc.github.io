@@ -3,11 +3,11 @@
 <head>
 
 <meta charset="UTF-8">
-<title>Home Page</title>
+<title>theme</title>
 <link rel="alternate" type="application/rss+xml" title="RSS" href="rss.xml" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!--<meta name="title" content="">-->
-<meta name="description" content="sharing something and else">
+<meta name="description" content="">
 <!--<meta name="keywords" content="">-->
 <meta name="color-scheme" content="light dark" />
 
@@ -35,8 +35,7 @@
 
 <script>function reload() {  location.reload(true); } </script>
 
-<script src="post_time.js"></script>
-<script src="search.js"></script>
+
 
 </head>
 <body>
@@ -99,57 +98,44 @@ document.getElementById("dropbtn").innerHTML = '☰ other';
 
 
 
-
-<header style="text-align: center">
-<a href="?q=drawing s"><img class="draw" src="dd.png?" alt="drawing" title="drawing"></a><br />
-<a rel="nofollow" href="?q=r"><img class="logo" src="logo.png? " alt="logo"  title="random code doc"><!-- <span style="vertical-align: middle; font-size:38px; font-weight:bold; color:#898989 "> gq3abc</span>--></a>
-</header>
-
-
-
-
-<!-- post -->
-
-<div class="post border2">
-<time datetime="2022-07-12T03:21:13+02:00"></time>
-<span class="pre">NASA Webb Telescope on Twitter: "👀 Sneak a peek at the deepest & sharpest infrared image of the early universe ever taken — all in a day’s work for the Webb telescope. (Literally, capturing it took less than a day!) This is Webb’s first image released as we begin to <a style="" rel="nofollow" class="tag light border1" target="blank" href="https://gq3abc.github.io/?q=unfoldtheuniverse%3A s">#UnfoldTheUniverse: <span class="sup">⇗</span></a> <a  target="_blank" href="https://t.co/tlougFWg8B">https://t.co/tlougFWg8B</a> <a  target="_blank" href="https://t.co/Y7ebmQwT7j"">https://t.co/Y7ebmQwT7j"</a> / Twitter <a  target="_blank" href="https://twitter.com/NASAWebb/status/1546621080298835970">https://twitter.com/NASAWebb/status/1546621080298835970</a></span>
-<div class="pf">
-<span class="taglist"><a style="" rel="nofollow" class="tag light border1" target="blank" href="https://gq3abc.github.io/?q=space s">#space <span class="sup">⇗</span></a> <a style="" rel="nofollow" class="tag light border1" target="blank" href="https://gq3abc.github.io/?q=news s">#news <span class="sup">⇗</span></a> <a style="" rel="nofollow" class="tag light border1" target="blank" href="https://gq3abc.github.io/?q=technology s">#technology <span class="sup">⇗</span></a></span>
-<span class="time"><span id="time228"></span></span>
+<div style="text-align:center;" class="center">
+<div id="themeOption"></div>
 </div>
-</div>
+
 
 <script>
-document.getElementById("time228").innerHTML = '<a class="tag border1 light" href="blog.html#228">&nbsp;'+postTime(1657588873)+'&nbsp;</a>';
+let themeOption = ["12,345,678,90"];
 
+themeOption.forEach(element => console.log(element));
 
-</script>
-
-
-<!-- post end -->
-
-</div>
-
+/*themeOption.forEach(
+element => document.getElementById("themeOption").innerHTML = ' <button id="'+element+'" class="button light3">'+element+'</button>';
+);*/
 
 
 
 
-
-<form method="GET" class="" style="width: var(--postw); margin-top: 70px;" action="search">
-
-<div  style="position: relative; height: var(--inputh);">
-<input type="text" class=""  id="clear"  style="text-align: center; position: absolute; bottom: 0;  left: 0; width: 75%; " name="q" autocomplete="off" x-webkit-speech />
-<button  type="button" class="op border1" style="position: absolute; z-index:2; bottom: 1px; left: calc(75% - 21px); width: 20px; height: 20px; cursor: pointer; text-align: center; font-size: 12px;" onclick="document.getElementById('clear').value = ''; document.getElementById('clear').focus();" title="Clear">✕</button>
-<input type="submit" value="go ⇗" style="position: absolute;  bottom: 0; right:0; width: calc(25% - 1px) !important;">
-</div>
-
-</form>
+/*themeOption.forEach(function(myFunction) {
+a2 += ' <button id="'+number+'" class="button light3">'+number+'</button>';
+if(number == 5){ a2 += '<div></div>'; }
+})
+document.getElementById("themeOption").innerHTML = a2;
 
 
-<div>
 
 
-</div>
+
+const button =[...themeOption];
+button.forEach(myFunction);
+
+let result = '';
+function myFunction(item, index) {
+ document.getElementById(item).addEventListener("click", function() {
+result = result+item;
+document.getElementById("result1").innerHTML = result;
+});
+}*/
+</script></div>
 
 <footer>
 <div class="wrapper">
