@@ -50,7 +50,7 @@ margin: 17px 0;
 margin-top: 53px;
 width: 100%;
 }
-footer span { display: inline-block; text-align: center; min-width: 40px; padding: 7px;  }
+footer span { display: inline-block; text-align: center; padding: 7px;  }
 header{ margin: 0 0 17px 0; }
 
 .wrapper, .wrapper2, .wrapper3 { max-width: var(--wrapper); margin: 0 auto; }
