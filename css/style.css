@@ -244,6 +244,9 @@ text-transform: lowercase;
 .violet:hover { color: var(--violet2); }
 .violetbg { background-color: var(--violet); }
 
+html{ scrollbar-color: var(--scroll) var(--bg); }
+body{ background: var(--bg); color :var(--c3); }
+
 html{ position: relative; }
 html::before {
 width: calc(100vh);

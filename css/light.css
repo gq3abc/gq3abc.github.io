@@ -33,5 +33,3 @@
 --violet2: #B03D8A;
 --scroll:  #D1D1D1;
 }
-html{ scrollbar-color: var(--scroll) var(--bg); }
-body{ background: var(--bg); color :var(--c3); }
