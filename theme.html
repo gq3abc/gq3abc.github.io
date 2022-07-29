@@ -105,7 +105,8 @@ document.getElementById("dropbtn").innerHTML = '☰ other';
 
 
 <script>
-let themeOption = ["auto","light","dark","random"];
+let themeOption = ["auto", "random"];
+themeOption.push(...themeList);
 
 var result = '';
 themeOption.forEach((element) => {

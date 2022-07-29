@@ -1,5 +1,6 @@
 var theme = localStorage.getItem('theme');
-
+var themeList = ["light", "dark", "orange"];
+let check;
 if(theme == null){ theme = 'auto'; }
 
 /*var loc = window.location.pathname;
@@ -21,33 +22,31 @@ document.getElementById('theme').href = '/css/light.css';
 
 function setTheme(mode){
 
+themeList.forEach((element) => {
+if(mode == element){ document.getElementById('theme').href = '/css/'+mode+'.css'; check = 'ok'; }
+})
+
+if(check != 'ok'){
 switch (mode) {
-
-case 'light':
-document.getElementById('theme').href = '/css/light.css';
-break;
-
-case 'dark':
-document.getElementById('theme').href = '/css/dark.css';
-break;
-
 case 'random':
-let themelist = [
-"/css/light.css",
-"/css/dark.css"
-];
-
-document.getElementById('theme').href = themelist[Math.floor(Math.random()*themelist.length)];
+document.getElementById('theme').href = '/css/'+themeList[Math.floor(Math.random()*themeList.length)]+'.css';
 break;
 
 default:
-
 themeAuto();
 window.matchMedia("(prefers-color-scheme: light)").addEventListener("change", function () {
 themeAuto();
 });
 
 }
+}
+
+if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+document.cookie = "theme=dark; SameSite=None; Secure";
+}else{
+document.cookie = "theme=light";
+}
+
 }
 
 setTheme(theme);

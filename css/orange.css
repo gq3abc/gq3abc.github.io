@@ -1,0 +1,35 @@
+/* light */
+:root{
+--bg: #E0C490;
+--l1: #E3C792; 
+--l2: #E8CB95; 
+--l3: #F2D49C; 
+--l4: #FFDFA4; 
+--d1: #DEC28F; 
+--d2: #D9BE8B; 
+--d3: #C4AC7E; 
+--d4: #A8936C; 
+--c1: #696969; 
+--c2: #404040; 
+--c3: #303030; 
+--c4: #0D0D0D; 
+/*--b1: #857750;
+--b2: #756946;*/
+--b3: #5E4118;
+--b4: #392100;
+--red: #A1382B;
+--red2: #B33E30;
+--orange: #DE5B00;
+--orange2: #FF6900;
+--yellow: #B29F00;
+--yellow2: #C4AF00;
+--green: #4EA831;
+--green2: #56BA36;
+--blue: #1E91C6;
+--blue2: #219FD9;
+--indigo: #5B67E2;
+--indigo2: #6370F5;
+--violet: #9E377C;
+--violet2: #B03D8A;
+--scroll:  #D1D1D1;
+}
