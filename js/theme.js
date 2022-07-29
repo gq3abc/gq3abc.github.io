@@ -42,9 +42,9 @@ themeAuto();
 }
 
 if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-document.cookie = "theme=dark; SameSite=None; Secure";
+document.cookie = "theme=dark; SameSite=None; Secure; path=/";
 }else{
-document.cookie = "theme=light";
+document.cookie = "theme=light; SameSite=None; Secure; path=/";
 }
 
 }
