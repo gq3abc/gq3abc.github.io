@@ -214,42 +214,6 @@ text-transform: lowercase;
 }
 .menu .tag {  padding: 9px; margin:0; font-size: calc(var(--fontsize) - 7%) !important; }
 
-/* light */
-:root{
---bg: #EBEAE4;
---l1: #F0EFEB; 
---l2: #F2F2EF; 
---l3: #F7F5F5; 
---l4: #FCFBF7; 
---d1: #E0DDDA; 
---d2: #DBD8D5; 
---d3: #C7C7C7; 
---d4: #A6A6A6; 
---c1: #696969; 
---c2: #404040; 
---c3: #303030; 
---c4: #0D0D0D; 
-/*--b1: #857750;
---b2: #756946;*/
---b3: #5E4118;
---b4: #392100;
---red: #A1382B;
---red2: #B33E30;
---orange: #DE5B00;
---orange2: #FF6900;
---yellow: #B29F00;
---yellow2: #C4AF00;
---green: #4EA831;
---green2: #56BA36;
---blue: #1E91C6;
---blue2: #219FD9;
---indigo: #5B67E2;
---indigo2: #6370F5;
---violet: #9E377C;
---violet2: #B03D8A;
---scroll:  #D1D1D1;
-}
-
 .shadow { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
 
 .red { color: var(--red); }
@@ -358,53 +322,6 @@ border-radius: 45%;
 .light3:hover, .light4{ background: var(--l4); }
 
 .highligh { background: var(--l4) !important;  border-bottom: 1px solid var(--d3); color: var(--c4) !important;  }
-
-/* dark */
-@media (prefers-color-scheme: dark) {
-:root{
---bg: #2E2E2E;
---l1: #303030;
---l2: #363636;
---l3: #383838;
---l4: #404040;
---d1: #2B2B2B;
---d2: #262626;
---d3: #1C1C1C;
---d4: #171717;
---c1: #919191; 
---c2: #A6A6A6; 
---c3: #DEDEDE; 
---c4: #F2F2F2; 
-/*--b1: #948B70;
---b2: #9E9478;*/
---b3: #D1C3A0;
---b4: #FCF0CA;
---red: #FF6E66;
---red2: #FF918A;
---orange: #E8B048;
---orange2: #FFCD70;
---yellow: #C7B56D;
---yellow2: #E3D394;
---green: #80BD69;
---green2: #98E07D;
---blue: #58ABD2;
---blue2: #68C9F7;
---indigo: #9198E4;
---indigo2: #B8BEFF;
---violet: #BD8AC0;
---violet2: #E7A9EB;
---scroll: #404040;
-}
-
-.logo, .logo2 { filter: invert(70%); }
-.draw{ filter: invert(90%); }
-
-html::before { filter: invert(90%); }
-
-input[type="submit"] { background: var(--l1); color: var(--c2); }
-input[type="submit"]:hover { background: var(--d1); color: var(--c3); }
-}
-/* end dark */
 
 html{ scrollbar-color: var(--scroll) var(--bg); }
 body{ background: var(--bg); color :var(--c3); }

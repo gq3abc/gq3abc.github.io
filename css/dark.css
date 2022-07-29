@@ -1,0 +1,50 @@
+/* dark */
+@media (prefers-color-scheme: dark) {
+:root{
+--bg: #2E2E2E;
+--l1: #303030;
+--l2: #363636;
+--l3: #383838;
+--l4: #404040;
+--d1: #2B2B2B;
+--d2: #262626;
+--d3: #1C1C1C;
+--d4: #171717;
+--c1: #919191; 
+--c2: #A6A6A6; 
+--c3: #DEDEDE; 
+--c4: #F2F2F2; 
+/*--b1: #948B70;
+--b2: #9E9478;*/
+--b3: #D1C3A0;
+--b4: #FCF0CA;
+--red: #FF6E66;
+--red2: #FF918A;
+--orange: #E8B048;
+--orange2: #FFCD70;
+--yellow: #C7B56D;
+--yellow2: #E3D394;
+--green: #80BD69;
+--green2: #98E07D;
+--blue: #58ABD2;
+--blue2: #68C9F7;
+--indigo: #9198E4;
+--indigo2: #B8BEFF;
+--violet: #BD8AC0;
+--violet2: #E7A9EB;
+--scroll: #404040;
+}
+
+.logo, .logo2 { filter: invert(70%); }
+.draw{ filter: invert(90%); }
+
+html::before { filter: invert(90%); }
+
+input[type="submit"] { background: var(--l1); color: var(--c2); }
+input[type="submit"]:hover { background: var(--d1); color: var(--c3); }
+}
+
+
+html{ scrollbar-color: var(--scroll) var(--bg); }
+body{ background: var(--bg); color :var(--c3); }
+/* end dark */
