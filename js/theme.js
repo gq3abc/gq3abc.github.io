@@ -1,5 +1,5 @@
 var theme = localStorage.getItem('theme');
-var themeList = ["light", "dark", "orange", "blue"];
+var themeList = ["light", "dark", "orange", "blue", "green"];
 let check;
 if(theme == null){ theme = 'auto'; }
 
