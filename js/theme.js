@@ -1,7 +1,6 @@
 var theme = localStorage.getItem('theme');
 var themeList = ["light", "dark", "light-blue", "light-green", "light-orange"];
-let check;
-if(theme == null){ theme = 'auto'; }
+if(theme == null||theme == ''){ theme = 'auto'; }
 
 /*var loc = window.location.pathname;
 var dir = loc.substring(0, loc.lastIndexOf('/'));
@@ -23,23 +22,26 @@ document.getElementById('theme').href = '/css/light.css';
 function setTheme(mode){
 
 themeList.forEach((element) => {
-if(mode == element){ document.getElementById('theme').href = '/css/'+mode+'.css'; check = 'ok'; }
+if(mode == element){ document.getElementById('theme').href = '/css/'+mode+'.css'; }
 })
 
-if(check != 'ok'){
+
+
+
 switch (mode) {
 case 'random':
 document.getElementById('theme').href = '/css/'+themeList[Math.floor(Math.random()*themeList.length)]+'.css';
 break;
 
-default:
+case 'auto':
 themeAuto();
 window.matchMedia("(prefers-color-scheme: light)").addEventListener("change", function () {
 themeAuto();
 });
+break;
 
 }
-}
+
 
 if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
 document.cookie = "theme=dark; SameSite=None; Secure; path=/";
