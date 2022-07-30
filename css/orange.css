@@ -1,14 +1,14 @@
 /* light */
 :root{
---bg: #E0CCA8;
---l1: #E3D0AD; 
---l2: #E8D1A7; 
---l3: #F2DEB8; 
---l4: #FFF1D6; 
---d1: #DECCAB; 
---d2: #D9C9AB; 
---d3: #C4B79D; 
---d4: #A89C86; 
+--bg: #F0DAB4;
+--l1: #F2DCB6; 
+--l2: #F7E1BA; 
+--l3: #FFE8BF; 
+--l4: #FFECCC; 
+--d1: #EDD7B2; 
+--d2: #E8D3AE; 
+--d3: #DECAA6; 
+--d4: #D1BE9D; 
 --c1: #696969; 
 --c2: #404040; 
 --c3: #303030; 
